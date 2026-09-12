@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:Mac Duo Effect}",
+            "name": "Debug MacDuoEffect",
+            "target": "MacDuoEffect",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug MacDuoEffect"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:Mac Duo Effect}",
+            "name": "Release MacDuoEffect",
+            "target": "MacDuoEffect",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release MacDuoEffect"
+        }
+    ]
+}
