@@ -63,7 +63,19 @@ Run the hardware probe or synthetic GPU verification:
 'build/direct/Mac Duo Effect.app/Contents/MacOS/MacDuoEffect' --render-check build/render-check
 ```
 
+Package a disk image from the current build:
+
+```sh
+scripts/make-dmg.sh
+```
+
 A sandbox build is available with `scripts/build.sh appstore`. It is not an App Store upload until signed with the correct distribution identity and provisioning configuration.
+
+## Continuous integration
+
+Pull requests run `swift test`, a universal build and the render check. Every push to `main` publishes a GitHub release with a `.dmg` and its SHA-256 checksum, tagged `v<version>-build.<run number>`.
+
+These automated builds are signed ad hoc, not with a Developer ID and not notarized. macOS shows a Gatekeeper warning on first launch: open the app from Finder with right click, choose Open, then confirm.
 
 ## Implementation and provenance
 
