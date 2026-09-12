@@ -12,34 +12,6 @@ Click the laptop icon in the menu bar. There is no separate settings window or D
 
 The current build is a development version. Public GitHub release and Mac App Store submission are pending.
 
-## Controls
-
-- **Depth effect:** enable or pause the effect.
-- **Live rendering:** update screen content continuously, or hold the starting frame.
-- **Stop when still:** end the effect after the lid stops moving.
-- **Start angle / Full effect after:** choose when the effect begins and how many more degrees reach full blur and dimming.
-- **Appearance:** blur radius, blur spread, dimming, dimming spread, lean back and perspective.
-- **Show angle in menu bar / Launch at login:** optional convenience controls.
-- **⋯ menu:** reset settings or quit the app.
-- **Info (ⓘ):** about page with version, author ([jkvn](https://github.com/jkvn)) and the source repository ([Mac-Duo-Effect](https://github.com/jkvn/Mac-Duo-Effect)).
-
-The depth effect is on by default. Without Screen Recording permission the switch is greyed out but stays on, and the effect starts by itself once permission is granted.
-
-Only the built-in display is affected. Sleep, inactive sessions and Reduce Motion pause the effect. Capture stops after the effect is no longer needed. Screen frames are processed in memory, never saved or transmitted. The synthetic images created by the developer render check are not screenshots.
-
-## Project layout
-
-```
-Sources/EffectCore        Settings model and effect math, shared and unit tested
-Sources/MacDuoEffect/App          Entry point and menu bar scene
-Sources/MacDuoEffect/Interface    Menu panel, about panel and shared controls
-Sources/MacDuoEffect/Model        App state and the 30 Hz effect loop
-Sources/MacDuoEffect/Capture      Lid angle sensor and screen capture
-Sources/MacDuoEffect/Rendering    Core Image pipeline, overlay window, display lookup
-Sources/MacDuoEffect/System       Screen Recording, launch at login, system events
-Sources/MacDuoEffect/Diagnostics  Command line checks
-```
-
 ## Development
 
 Open `Package.swift` in Xcode, or use the included macOS app project for app bundling and archiving.
